@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import { BiHome } from "react-icons/bi";
 import { NavLink ,useNavigate} from "react-router-dom";
-import './err.css'
+import '../App.css'
 const CatchRouteAll = () => {
   const navigate= useNavigate()
   return (

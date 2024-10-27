@@ -45,7 +45,7 @@ const Home = () => {
             <div className="flex w-auto items-center place-self-center mt-1 mb-2">
               <article className="text-orange-400">{homeData.date}</article>
               <article className="ml-1 text-white text-sm font-thin">
-                {months[homeData.month - 1]}
+                {months[homeData.month]}
               </article>
               <article className="ml-1 text-white text-sm font-thin">
                 {homeData.year}

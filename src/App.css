@@ -21,3 +21,17 @@
     width: 4px;
     background: turquoise;
 }
+.rbc-header{
+    background-color: transparent;
+    border: gray;
+    font: bold;
+}
+.text-area{
+    resize: none;
+}
+.err{
+    background-image: url('./images/rose.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}

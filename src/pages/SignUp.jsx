@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState ,useEffect } from "react";
 import { BsEyeFill, BsGoogle } from "react-icons/bs";
 import { GrApple } from "react-icons/gr";
 import { Link } from "react-router-dom";
@@ -10,6 +10,7 @@ const SignUp = () => {
     mail: "",
     password: "",
   });
+  const [responseStatement ,setResponseStatement] = useState('')
   const handleData = (e) => {
     setSignData({ ...signData, [e.target.name]: [e.target.value] });
   };
@@ -29,19 +30,24 @@ const SignUp = () => {
           Authorization: "json tokens here",
         },
         body: JSON.stringify(signData),
-      });
-      if (!response.ok) {
-        console.log("not submitted");
-      }
-      if (response.ok) {
-        console.log("submission successful");
-      }
+      }).then(response=>{
+        if(!response.ok){
+          return response.json().then(err=>{
+            setResponseStatement(err.body.message)
+            setTimeout(()=>{setResponseStatement('')},4000)
+          })
+        }
+        return response.json()
+      })
+      
+
     } catch (err) {
       console.log("err");
     }
-  };
+  }; 
+  
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={(e)=>handleSubmit(e)}>
       <div
         className="w-full flex items-center justify-center bg-transparent "
         style={{ height: "calc(100vh - 56px)" }}
@@ -122,6 +128,7 @@ const SignUp = () => {
               create account
             </button>
           </div>
+          <article className="text-center text-sm text-red-600 mt-3 h-1">{responseStatement}</article>
           <div className="w-full h-4 pr-3 pl-3 mt-4 mb-2 flex flex-row items-center justify-center">
             <hr className="h-1 w-48 mr-2 border-gray-700/40" />
             <article className="text-gray-700/30 text-sm">or</article>
