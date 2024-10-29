@@ -13,7 +13,7 @@ const Setting = () => {
     bioInformation: "",
   });
   const updateSettings = (e) => {
-    setTrackForm({ ...trackForm, [e.target.name]: [e.target.value] });
+    setTrackForm({ ...trackForm, [e.target.name]:e.target.value });
   };
   const Account = () => {
     return <div>Account</div>;

@@ -20,6 +20,7 @@
 ::-webkit-scrollbar{
     width: 4px;
     background: turquoise;
+    border-radius: 20px;
 }
 .rbc-header{
     background-color: transparent;
@@ -34,4 +35,18 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+.bg-contact {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h8M8 14h4M2 12a10 10 0 0110-10 10 10 0 0110 10 10 10 0 01-10 10 10 10 0 01-10-10z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.bg-chat {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11c1.333 0 2.625.395 3.728 1.072A9.974 9.974 0 0012 4a9.974 9.974 0 00-7.728 8.072C6.375 11.395 7.667 11 9 11h7zM12 14c-3.313 0-6 2.687-6 6v1a2 2 0 002 2h8a2 2 0 002-2v-1c0-3.313-2.687-6-6-6z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
 }
