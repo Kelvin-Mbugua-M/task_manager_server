@@ -60,9 +60,9 @@ const ContactItem = ({ contact, onClick }) => (
     </div>
     <div className="ml-3 flex-1">
       <div className="text-sm font-semibold">{contact.name}</div>
-      <div className="text-xs text-gray-700/55 truncate">{contact.messages[contact.messages.length - 1].content}</div>
+      <div className="text-xs text-gray-700/55 truncate overflow-ellipsis w-24">{contact.messages[contact.messages.length - 1].content}</div>
     </div>
-    <div className="text-xs text-gray-700/60">{contact.messages[contact.messages.length - 1].time}</div>
+    <div className="text-xs text-gray-700/60 overflow-ellipsis w-12">{contact.messages[contact.messages.length - 1].time}</div>
   </div>
 );
 const ChatArea = ({ selectedChat }) => (
@@ -82,12 +82,12 @@ const ChatArea = ({ selectedChat }) => (
               } mb-2`}
             >
               <div
-                className={`p-3 rounded-lg backdrop-blur-3xl ${
-                  msg.sender === "You" ? "bg-blue-600/20" : "bg-black/20"
+                className={`p-3 rounded-lg backdrop-blur-3xl  ${
+                  msg.sender === "You" ? "bg-black/20" : "bg-blue-600/20"
                 } max-w-xs`}
               >
-                <div className="text-sm">{msg.content}</div>
-                <div className="text-xs text-gray-400 mt-1">{msg.time}</div>
+                <article className="text-sm ">{msg.content}</article>
+                <article className="text-xs text-slate-400 mt-1">{msg.time}</article>
               </div>
             </div>
           ))}
@@ -96,9 +96,9 @@ const ChatArea = ({ selectedChat }) => (
           <input
             type="text"
             placeholder="Type a message"
-            className="flex-1 bg-gray-700 text-gray-300 px-4 py-2 rounded-lg outline-none"
+            className="flex-1 bg-black/40 backdrop-blur-3xl text-gray-300 px-4 py-2 rounded-l-md rounded-r-sm outline-none placeholder:text-sm"
           />
-          <button className="ml-4 bg-blue-600 text-white px-4 py-2 rounded-lg">
+          <button className="ml-4 bg-blue-600 text-white px-4 py-2 rounded-sm w-16 outline-none border-none">
             Send
           </button>
         </div>
